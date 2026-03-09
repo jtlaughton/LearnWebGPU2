@@ -3,14 +3,12 @@ project(webgpu-backend)
 
 message(STATUS "Using Dawn from submodule")
 
-# Check if Dawn submodule exists
-if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../external/dawn/CMakeLists.txt")
-	message(FATAL_ERROR
-			"Dawn submodule not found. Please run:\n"
-			"  git submodule update --init --recursive\n"
-			"from your project root directory."
-	)
-endif()
+FetchContent_Declare(
+    dawn
+    GIT_REPOSITORY https://dawn.googlesource.com/dawn [cite: 4]
+    GIT_TAG        main
+    SOURCE_DIR     "${CMAKE_CURRENT_SOURCE_DIR}/external/dawn"
+)
 
 # Configure Dawn options BEFORE adding subdirectory
 set(DAWN_FETCH_DEPENDENCIES ON CACHE BOOL "Fetch Dawn dependencies" FORCE)

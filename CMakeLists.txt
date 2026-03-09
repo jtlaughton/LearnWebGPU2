@@ -5,6 +5,8 @@ project(
         LANGUAGES CXX C # programming languages used by the project
 )
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 add_subdirectory(external/glfw)
 add_subdirectory(external/glfwwebgpu)
 add_subdirectory(webgpu)

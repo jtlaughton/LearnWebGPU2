@@ -4,6 +4,3 @@
 [submodule "external/glfwwebgpu"]
 	path = external/glfwwebgpu
 	url = git@github.com:jtlaughton/glfw3webgpu.git
-[submodule "external/dawn"]
-	path = external/dawn
-	url = https://dawn.googlesource.com/dawn
